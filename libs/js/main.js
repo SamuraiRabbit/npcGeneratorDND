@@ -18,20 +18,34 @@ $(window).on('load', function () {
 $(document).ready(function(){
 
     $('#npcButton').click(function() {
-        generateRace(raceArray);
-        generateGender(genderArray);
-        generateOccupation(occupationArray);
-        generateDemeanour(demeanourArray);
+        $race = generateRace(raceArray);
+        $gender = generateGender(genderArray);
+        $occupation = generateOccupation(occupationArray);
+        $demeanour = generateDemeanour(demeanourArray);
+        $name = generateName($race, $gender);
     });
 });
 
 function generateRace(raceArray) {
     $race = Math.floor(Math.random() * raceArray.length);
     $("#race").text(raceArray[$race]);
-    alert(raceArray[randomRace]);
 }
 
+function generateGender(genderArray) {
+    $gender = Math.floor(Math.random() * genderArray.length);
+    $("#gender").text(genderArray[$gender]);
+}
 
+function generateOccupation(occupationArray) {
+    $occupation = Math.floor(Math.random() * occupationArray.length);
+    $("#occupation").text(occupationArray[$occupation]);
+}
 
+function generateDemeanour(demeanourArray) {
+    $demeanour = Math.floor(Math.random() * demeanourArray.length);
+    $("#demeanour").text(demeanourArray[$demeanour]);
+}
 
-
+function generateName(race, gender) {
+    $("#name").text("Example Fantasy NPC");
+}
